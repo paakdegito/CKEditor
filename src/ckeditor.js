@@ -17,13 +17,19 @@ import Highlight from '@ckeditor/ckeditor5-highlight/src/highlight.js';
 import Image from '@ckeditor/ckeditor5-image/src/image.js';
 import ImageCaption from '@ckeditor/ckeditor5-image/src/imagecaption.js';
 import ImageInsert from '@ckeditor/ckeditor5-image/src/imageinsert.js';
+import ImageResize from '@ckeditor/ckeditor5-image/src/imageresize.js';
+import ImageStyle from '@ckeditor/ckeditor5-image/src/imagestyle.js';
+import ImageToolbar from '@ckeditor/ckeditor5-image/src/imagetoolbar.js';
 import ImageUpload from '@ckeditor/ckeditor5-image/src/imageupload.js';
 import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic.js';
 import Link from '@ckeditor/ckeditor5-link/src/link.js';
 import MediaEmbed from '@ckeditor/ckeditor5-media-embed/src/mediaembed.js';
+import MediaEmbedToolbar from '@ckeditor/ckeditor5-media-embed/src/mediaembedtoolbar.js';
 import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph.js';
+import RemoveFormat from '@ckeditor/ckeditor5-remove-format/src/removeformat.js';
 import SimpleUploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/simpleuploadadapter.js';
 import SourceEditing from '@ckeditor/ckeditor5-source-editing/src/sourceediting.js';
+import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation.js';
 import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline.js';
 
 class Editor extends ClassicEditor {}
@@ -44,13 +50,19 @@ Editor.builtinPlugins = [
 	Image,
 	ImageCaption,
 	ImageInsert,
+	ImageResize,
+	ImageStyle,
+	ImageToolbar,
 	ImageUpload,
 	Italic,
 	Link,
 	MediaEmbed,
+	MediaEmbedToolbar,
 	Paragraph,
+	RemoveFormat,
 	SimpleUploadAdapter,
 	SourceEditing,
+	TextTransformation,
 	Underline
 ];
 
@@ -67,6 +79,7 @@ Editor.defaultConfig = {
 			'highlight',
 			'fontSize',
 			'fontColor',
+			'removeFormat',
 			'link',
 			'|',
 			'imageInsert',
@@ -77,7 +90,15 @@ Editor.defaultConfig = {
 			'sourceEditing'
 		]
 	},
-	language: 'en'
+	language: 'en',
+	image: {
+		toolbar: [
+			'imageTextAlternative',
+			'imageStyle:inline',
+			'imageStyle:block',
+			'imageStyle:side'
+		]
+	}
 };
 
 export default Editor;
