@@ -90,6 +90,7 @@ Editor.defaultConfig = {
       'sourceEditing',
     ],
   },
+  mediaEmbed: { previewsInData: true },
   language: 'en',
   image: {
     toolbar: [
